@@ -1,0 +1,65 @@
+{
+    "name": "exorgroup/apex-locale",
+    "type": "laravel-package",
+    "description": "Shared locale reference for Laravel: countries, currencies, Money, VAT bands and dated rates",
+    "keywords": [
+        "laravel",
+        "locale",
+        "currency",
+        "money",
+        "vat"
+    ],
+    "homepage": "https://github.com/exorgroup/apex-locale",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "EXOR Group",
+            "email": "support@exorgroup.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/exorgroup/apex-locale/issues",
+        "source": "https://github.com/exorgroup/apex-locale"
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "laravel/framework": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apex\\Locale\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apex\\Locale\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apex\\Locale\\LocaleServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
