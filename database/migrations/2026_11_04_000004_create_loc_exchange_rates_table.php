@@ -24,7 +24,8 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['base_currency', 'quote_currency', 'effective_on']);
+            // Named: the generated name is 66 characters and MySQL allows 64 (LC1/007).
+            $table->index(['base_currency', 'quote_currency', 'effective_on'], 'loc_fx_pair_date_index');
         });
     }
 

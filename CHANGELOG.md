@@ -17,3 +17,7 @@ All notable changes to `exorgroup/apex-locale`.
 - `CashRounding::step(currency, country)`: the country's override, else the currency default.
 - VAT: `loc_vat_bands` (country, band, label, basis points, effective from / to) with Malta's six bands seeded open-ended; `loc_vat_categories` (tenant-named, pointing at a band); `VatResolver::rate(country, category|band, date)` returning a `VatRate`, throwing `VatRateMissing` (never 0 %) or `VatRateOverlap`.
 - `locale.reporting_currency` (default `EUR`) and an empty, dated `loc_exchange_rates` table (`ExchangeRate`: exact decimal rate, two different ISO codes, positive). Nothing converts yet.
+- `apex-locale-ai.md`: the agent reference.
+
+### Fixed
+- `loc_exchange_rates`' index is named `loc_fx_pair_date_index`: the generated name was 66 characters and MySQL refuses more than 64. A test now checks every `loc_` table and index name.
